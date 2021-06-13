@@ -2,7 +2,7 @@
 
 Creator of the challenge : Cryptax
 
-Writeup author : Sh
+Writeup author : stI1gar
 
 ## Presentation
 This is a writeup on the Android reverse challenge "Mission Impossible", designed by Cryptax.
