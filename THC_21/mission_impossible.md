@@ -83,10 +83,12 @@ I wrote a small Python script for this, which gives us the flag:
 
     decrypt()
     
-## 
+## DYnamic analysis
 A great trick from Cryptax herself : you can directly execute the dex file with the following command ;
 
-    adb shell dalvikvm -cp /sdcard/simple.zip thcon21.ctf.payload.smalldex MissionImpossible
+    adb shell dalvikvm -cp /sdcard/simple.zip thcon21.ctf.payload.smalldex
+
+By putting "MissionImpossible" as an argument, it directly gives you the flag !
 
 ## Flag
 We finally find : THCon21{Th1s-Was-Poss1ble-For-U} !
