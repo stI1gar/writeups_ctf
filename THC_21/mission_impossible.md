@@ -83,7 +83,7 @@ I wrote a small Python script for this, which gives us the flag:
 
     decrypt()
     
-## DYnamic analysis
+## Dynamic analysis
 A great trick from Cryptax herself : you can directly execute the dex file with the following command ;
 
     adb shell dalvikvm -cp /sdcard/simple.zip thcon21.ctf.payload.smalldex
