@@ -23,7 +23,7 @@ I used two tools (on Linux based distros, eg Debian) which are particularly usef
 - first : 'binwalk' (firmware analysis, etc), but it does not detect any hidden files,
 - second : the 'strings' command : good news, the output looks like Dalvik (smali) bytecode !
     
-        $ strings MissionImpossibleTheme.mp3
+       $ strings MissionImpossibleTheme.mp3
 
 So I'm now assuming that a dex file is hidden within this mp3. But how is the audio file still playable ?
 Using the "hexdump" command, we notice that there is a "TAG" string, which precedes the words "Mission Impossible": these are the metadata of the file (here, the title), which are normally at the end of the file according to the standard. We can therefore hide some data after the metadata of the mp3 file, while keeping the audio file readable !This additional data is simply ignored.
@@ -82,6 +82,11 @@ I wrote a small Python script for this, which gives us the flag:
         print("flag : ", dec)
 
     decrypt()
+    
+## 
+A great trick from Cryptax herself : you can directly execute the dex file with the following command ;
+
+    adb shell dalvikvm -cp /sdcard/simple.zip thcon21.ctf.payload.smalldex MissionImpossible
 
 ## Flag
 We finally find : THCon21{Th1s-Was-Poss1ble-For-U} !
